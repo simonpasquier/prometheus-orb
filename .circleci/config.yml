@@ -17,15 +17,3 @@ workflows:
           publish-token-variable: CIRCLECI_API_TOKEN
           requires:
           - orb-tools/pack
-
-            #      - orb-tools/increment:
-            #          orb-path: packed/orb.yml
-            #          orb-ref: "simonpasquier/prometheus-orb"
-            #          segment: "patch"
-            #          publish-token-variable: CIRCLECI_API_TOKEN
-            #          attach-workspace: true
-            #          checkout: false
-            #          requires: [orb-tools/pack]
-            #          filters:
-            #            branches:
-            #              only: master
