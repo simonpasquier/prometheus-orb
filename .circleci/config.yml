@@ -13,6 +13,7 @@ workflows:
           destination-orb-path: packed/orb.yml
           workspace-path: packed/orb.yml
           artifact-path: packed/orb.yml
+          requires: [orb-tools/lint]
 
       - orb-tools/publish:
           orb-path: packed/orb.yml
@@ -24,7 +25,7 @@ workflows:
 
       - orb-tools/increment:
           orb-path: packed/orb.yml
-          orb-ref: "circleci/hello-build"
+          orb-ref: "simonpasquier/prometheus-orb"
           segment: "patch"
           publish-token-variable: CIRCLECI_API_TOKEN
           attach-workspace: true
