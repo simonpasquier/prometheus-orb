@@ -14,6 +14,7 @@ workflows:
 
       - orb-tools/publish-dev:
           orb-name: "simonpasquier/prometheus-orb"
+          publish-token-variable: CIRCLECI_API_TOKEN
           requires:
           - orb-tools/pack
 
