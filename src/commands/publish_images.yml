@@ -10,10 +10,10 @@ parameters:
     type: string
   login_variable:
     description: Environment variable holding the registry login
-    type: string
+    type: env_var_name
   password_variable:
     description: Environment variable holding the registry password
-    type: string
+    type: env_var_name
 
 steps:
 - run: make docker DOCKER_REPO=<< parameters.registry >>/<< parameters.org >>
