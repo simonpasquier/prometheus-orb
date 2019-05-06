@@ -14,3 +14,4 @@ steps:
     - .build
 - store_artifacts:
     path: .build
+    destination: /build
