@@ -19,8 +19,10 @@ workflows:
           - orb-tools/pack
 
       - orb-tools/increment:
-          orb-name: "simonpasquier/prometheus-orb"
+          orb-ref: "simonpasquier/prometheus-orb"
           publish-token-variable: CIRCLECI_API_TOKEN
+          checkout: false
+          attach-workspace: true
           segment: minor
           requires:
           - orb-tools/pack
