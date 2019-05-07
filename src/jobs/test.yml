@@ -1,0 +1,22 @@
+description: >
+  Run 'make' and store the resulting binary.
+
+parameters:
+  version:
+    description: Go version
+    type: string
+  binary:
+    description: Binary name
+    type: string
+
+jobs:
+  test:
+    executor:
+      name: golang
+      version: << parameters.version >>
+
+    steps:
+    - prometheus-orb/setup_environment
+    - run: make
+    - prometheus-orb/store_artifact:
+        file: << parameters.binary >>
