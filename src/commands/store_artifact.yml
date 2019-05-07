@@ -13,5 +13,5 @@ parameters:
 steps:
 - store_artifacts:
     path: << parameters.file >>
-    destination: /<< parameters.directory >>/<< parameters.file >>
+    destination: << parameters.directory >>/<< parameters.file >>
 - run: rm -v << parameters.file >>
