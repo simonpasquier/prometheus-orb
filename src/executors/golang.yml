@@ -5,8 +5,10 @@ parameters:
   version:
     description: Go version
     type: string
+  resource_class:
+    description: Resource class
+    type: string
 
-executors:
-  golang:
-    docker:
-    - image: circleci/golang:<< parameters.version >>
+resource_class: << parameters.resource_class >>
+docker:
+- image: circleci/golang:<< parameters.version >>

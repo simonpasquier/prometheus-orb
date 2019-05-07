@@ -8,15 +8,18 @@ parameters:
   binary:
     description: Binary name
     type: string
+  resource_class:
+    description: Resource class
+    type: string
+    default: medium
 
-jobs:
-  test:
-    executor:
-      name: golang
-      version: << parameters.version >>
+executor:
+  name: golang
+  version: << parameters.version >>
+  resource_class: << parameters.resource_class >>
 
-    steps:
-    - prometheus-orb/setup_environment
-    - run: make
-    - prometheus-orb/store_artifact:
-        file: << parameters.binary >>
+steps:
+- setup_environment
+- run: make
+- store_artifact:
+    file: << parameters.binary >>
