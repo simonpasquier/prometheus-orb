@@ -20,7 +20,7 @@ workflows:
           publish-token-variable: CIRCLECI_API_TOKEN
           checkout: false
           attach-workspace: true
-          segment: minor
+          segment: patch
           requires:
           - orb-tools/pack
           filters:
