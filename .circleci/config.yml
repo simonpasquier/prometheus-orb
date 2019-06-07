@@ -6,13 +6,8 @@ orbs:
 workflows:
   build:
     jobs:
-      - orb-tools/lint:
-          filters:
-            tags:
-              only: /.*/
+      - orb-tools/lint
       - orb-tools/pack:
-          requires:
-          - orb-tools/lint
           filters:
             tags:
               only: /.*/
@@ -20,6 +15,7 @@ workflows:
           orb-name: simonpasquier/prometheus-orb
           publish-token-variable: CIRCLECI_API_TOKEN
           requires:
+          - orb-tools/lint
           - orb-tools/pack
           filters:
             branches:
