@@ -21,7 +21,7 @@ workflows:
             branches:
               only: master
       - orb-tools/publish:
-          orb-ref: simonpasquier/prometheus-orb:$CIRCLE_TAG
+          orb-ref: simonpasquier/prometheus-orb@$CIRCLE_TAG
           publish-token-variable: CIRCLECI_API_TOKEN
           checkout: false
           attach-workspace: true
